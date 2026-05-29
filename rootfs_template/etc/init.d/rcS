@@ -1,0 +1,24 @@
+#!/bin/sh
+# System initialization script
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+export PATH
+
+# 1. Mount virtual filesystems specified in /etc/fstab
+mount -a
+
+# 2. Create subdirectories on tmpfs for volatile files
+mkdir -p /dev/pts
+mkdir -p /dev/shm
+
+# 3. Start mdev (dynamic hotplug device node manager)
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+
+# 4. Set host name
+hostname -F /etc/hostname
+
+echo ""
+echo -e "\033[1;36m==================================================\033[0m"
+echo -e "\033[1;32m      Welcome to i.MX6UL Embedded Linux!          \033[0m"
+echo -e "\033[1;36m==================================================\033[0m"
+echo ""

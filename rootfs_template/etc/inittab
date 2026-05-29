@@ -1,0 +1,11 @@
+# /etc/inittab
+# System startup and initialization configuration
+::sysinit:/etc/init.d/rcS
+
+# Set up a console shell on early boot
+console::askfirst:-/bin/sh
+
+# Actions on reboot and shutdown
+::ctrlaltdel:/sbin/reboot
+::shutdown:/sbin/swapoff -a
+::shutdown:/bin/umount -a -r

@@ -1,0 +1,11 @@
+# /etc/profile: System-wide environment and startup program paths
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export USER=root
+export LOGNAME=root
+
+# Premium HSL-inspired prompt (Green hostname, Blue directory, Root flag)
+export PS1='\[\e[1;32m\][\u@\h:\[\e[1;34m\]\w\[\e[1;32m\]]\# \[\e[0m\]'
+
+alias ls='ls --color=auto'
+alias ll='ls -la'

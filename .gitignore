@@ -61,3 +61,8 @@ TAGS
 # user-supplied scripts
 #
 /embed
+
+# RootFS build outputs
+/_install/
+/rootfs/
+/rootfs.tar.bz2
